@@ -3,10 +3,10 @@
 ## API routes and subroutes
 * v1/health_check
 * v1/job
-    * v1/job/<startdate>
+    * v1/job/<company>
     * v1/job/range [POST]
 * v1/education
-    * v1/education/<startdate>
+    * v1/education/<college>
     * v1/education/range [POST]
 * v1/interests
 * v1/languages
