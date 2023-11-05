@@ -1,11 +1,11 @@
 package main
 
 import (
-	"github.com/gorilla/mux"
-	// "fmt"
 	"log"
 	"net/http"
 	"time"
+
+	"github.com/gorilla/mux"
 )
 
 func main() {
@@ -15,7 +15,8 @@ func main() {
 
 	r.HandleFunc("/api/v1/health_check", HealthCheck).Methods("GET")
 	r.HandleFunc("/api/v1/job", JobsAll).Methods("GET")
-	r.HandleFunc("/api/v1/job/{company}", JobSingle).Methods("GET")
+	r.HandleFunc("/api/v1/job/company/{company}", JobSingleCompany).Methods("GET")
+	r.HandleFunc("/api/v1/job/{startdate}", JobSingleDate).Methods("GET")
 	// r.HandleFunc("/api/v1/job/range", HealthCheck).Methods("POST")
 
 	srv := &http.Server{
